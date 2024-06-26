@@ -1,10 +1,13 @@
 import React from 'react';
+import {usersService} from "@/services/fetch.api.service";
 
-const UserIdPage = ({params}: {params: {id: string}}) => {
-
+const UserIdPage = async ({params}: { params: { id: string } }) => {
+    const singleUser = await usersService.getById(params.id)
     return (
         <div>
-            {params.id}
+            {
+                singleUser && <h1>{singleUser.id}: {singleUser.email}</h1>
+            }
         </div>
     );
 };

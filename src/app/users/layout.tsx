@@ -5,6 +5,7 @@ export const metadata: Metadata = {
     title: "UsersLayout",
 };
 
+
 const UserLayout = ({children}: {children: React.ReactNode; }) => {
     return (
         <div>

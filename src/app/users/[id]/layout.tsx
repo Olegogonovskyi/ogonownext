@@ -1,9 +1,9 @@
-import type {Metadata} from "next";
 import React from "react";
 
-export const metadata: Metadata = {
-    title: "UsersLayout",
-};
+
+export const generateMetadata = ({params}: { params: { id: string } }) => {
+    return {title: `User: ${params.id}` }
+}
 
 const UserIDLayout = ({children}: {children: React.ReactNode; }) => {
     return (
